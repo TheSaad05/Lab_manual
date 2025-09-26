@@ -1,3 +1,3 @@
 # Lab_Mannual
 <br>
-This repo is for my university assignments
+this specific repository is from my subject only

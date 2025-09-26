@@ -1,12 +1,12 @@
  body {
- background-color: lightyellow;
+ background-color: lime;
  }
  h3 {
- color: purple;
+ color: green;
  text-decoration: underline;
  }
  p {
- color: darkblue;
+ color: cyan;
  font-size: 14px;
  }
  
