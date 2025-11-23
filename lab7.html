@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 7: JavaScript Fundamentals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .result-box {
+            min-height: 100px;
+            border: 2px solid #3b82f6;
+            background-color: #eff6ff;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .console-box {
+            min-height: 50px;
+            border: 2px solid #10b981;
+            background-color: #ecfdf5;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-blue-700 mb-2 text-center">Experiment 7: JavaScript Fundamentals</h1>
+        <p class="text-lg text-gray-600 mb-6 text-center">Console and Web Interactivity Tasks</p>
+
+        <div class="space-y-6">
+
+            <div class="p-4 border border-gray-200 rounded-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-3">Task 1: Prompt and Alert (Identity Input)</h2>
+                <p class="text-sm text-red-500 mb-4">Note: The lab manual requires `prompt()` and `alert()`. For better usability, this task uses `prompt()` but displays the result in the blue box below instead of a blocking `alert()` pop-up.</p>
+                <button onclick="task1_IdentityInput()" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-200 shadow-md">
+                    Click to Enter Name & Reg ID
+                </button>
+                <div id="task1_result" class="result-box text-blue-800">
+                    Your information will appear here.
+                </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-3">Task 2: Arithmetic and Comparison</h2>
+                <button onclick="task2_Arithmetic()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-200 shadow-md">
+                    Task 2: Arithmetic and Comparison
+                </button>
+                <div id="task2_result" class="result-box text-green-800 border-green-500 bg-green-50">
+                    Arithmetic results will appear here.
+                </div>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-3">Console Operations Demo (For Report)</h2>
+                <p class="text-gray-700">Open your browser's Developer Console (F12 or Ctrl+Shift+I) to see the output from Code Snippets 2 & 3 as requested in the lab discussion. Click the button to run the demo code.</p>
+                <button onclick="consoleDemo()" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded mt-3 transition duration-200 shadow-md">
+                    Run Console Demo (Check F12 Console!)
+                </button>
+                <div class="console-box">
+                    Check the browser console (F12) for results on variables, data types, and string operations.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function consoleDemo() {
+            console.clear();
+            console.log("--- Console Demo Output (Lab 7 Discussion) ---");
+
+            var name = "Ali";
+            var age = 20;
+            var isStudent = true;
+            var marks;
+            var value = null;
+
+            console.log("Variable: name (Value: " + name + ") - Type:", typeof name);
+            console.log("Variable: age (Value: " + age + ") - Type:", typeof age);
+            console.log("Variable: isStudent (Value: " + isStudent + ") - Type:", typeof isStudent);
+            console.log("Variable: marks (Value: " + marks + ") - Type:", typeof marks);
+            console.log("Variable: value (Value: " + value + ") - Type:", typeof value);
+
+            var country = "Pakistan";
+            console.log("\n--- String Operations ---");
+            console.log("Original String:", country);
+            console.log("Concatenation: I love " + country);
+            console.log("Slicing (0, 4):", country.slice(0, 4));
+
+            console.log("\n--- Arithmetic and Comparison Operations (a=10, b=3) ---");
+            var a = 10, b = 3;
+            console.log("Sum:", a + b);
+            console.log("Modulus:", a % b);
+            console.log("Comparison (a > b):", a > b);
+            console.log("-------------------------------------------------");
+        }
+
+        function task1_IdentityInput() {
+            var studentName = prompt("Please enter your Name:");
+            var regId = prompt("Please enter your Registration ID:");
+
+            var outputText = "Name: " + studentName + "\nRegistration ID: " + regId;
+
+            document.getElementById('task1_result').textContent = outputText;
+        }
+
+        function task2_Arithmetic() {
+            var num1 = parseFloat(prompt("Enter the first number:"));
+            var num2 = parseFloat(prompt("Enter the second number:"));
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('task2_result').textContent = "Error: Please enter valid numbers.";
+                return;
+            }
+
+            var sum = num1 + num2;
+            var difference = num1 - num2;
+            var product = num1 * num2;
+            var quotient = num1 / num2;
+            var comparison = num1 > num2;
+
+            var output = "First Number (num1): " + num1 + "\n" +
+                         "Second Number (num2): " + num2 + "\n\n" +
+                         "Sum: " + sum + "\n" +
+                         "Difference: " + difference + "\n" +
+                         "Product: " + product + "\n" +
+                         "Quotient: " + quotient.toFixed(2) + "\n" +
+                         "Comparison (num1 > num2): " + comparison;
+
+            document.getElementById('task2_result').textContent = output;
+
+            console.log("--- Task 2 Arithmetic Results ---");
+            console.log(output);
+            console.log("----------------------------------");
+        }
+
+        window.onload = consoleDemo;
+    </script>
+
+</body>
+</html>

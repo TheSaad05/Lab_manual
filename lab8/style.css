@@ -1,0 +1,15 @@
+.hidden {
+    display: none;
+}
+
+.large-box {
+    transform: scale(1.1);
+}
+
+.red-bg {
+    background-color: #ffcccc;
+}
+
+.blue-text {
+    color: blue;
+}

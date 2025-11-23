@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 6: Web Responsiveness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background-color: antiquewhite;
+        }
+
+        #center {
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: navy;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            border: 2px solid darkslategray;
+            padding: 20px;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .mcontainer {
+            display: none;
+            width: 95%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        ol li {
+            margin: 8px 0;
+            padding: 5px;
+            list-style: decimal;
+        }
+
+        .desktop-list li:last-child {
+            align-self: flex-end;
+            background-color: #e0e0e0;
+            padding: 5px 10px;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-color: aquamarine;
+                margin: 20px;
+            }
+
+            .container {
+                display: none;
+            }
+
+            .mcontainer {
+                display: block;
+                background-color: lightcyan;
+                color: blue;
+                text-align: center;
+            }
+
+            .mobile-list li {
+                font-family: Verdana, sans-serif;
+                color: darkblue;
+                text-align: center;
+            }
+
+            .mobile-list li:last-child {
+                align-self: center;
+                background-color: transparent;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Web Technologies Handout (Lab 6)</h1>
+        <h2>Course: CSS-336 (2+1)</h2>
+        <p id="center">Semester: Fall 2025</p>
+        <h3>Name: M.Saad Ayaz | Registration ID: Fa22-Bce-070</h3>
+        <p>Following are the list of experiments :</p>
+
+        <ol class="desktop-list" style="width: 90%;">
+            <li>Experiment 1: Introduction to HTML Basics</li>
+            <li>Experiment 2: Creating and Publishing an Online Lab Manual</li>
+            <li>Experiment 3: Working with Tables, Lists, Images, and Hyperlinks</li>
+            <li>Experiment 4: Applying CSS to HTML (Inline, Internal, and External Styles)</li>
+            <li>Experiment 5: Exploring CSS Selectors</li>
+            <li>Experiment 6: Web Responsiveness</li>
+        </ol>
+    </div>
+
+    <div class="mcontainer">
+        <h1>Web Technologies Handout (Mobile View)</h1>
+        <p>Simplified Experiment List:</p>
+
+        <ol class="mobile-list">
+            <li>Lab1</li>
+            <li>Lab2</li>
+            <li>Lab3</li>
+            <li>Lab4</li>
+            <li>Lab5</li>
+            <li>Lab6</li>
+        </ol>
+    </div>
+
+</body>
+</html>

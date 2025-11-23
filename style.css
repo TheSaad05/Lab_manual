@@ -1,0 +1,12 @@
+ body {
+ background-color: lime;
+ }
+ h3 {
+ color: green;
+ text-decoration: underline;
+ }
+ p {
+ color: cyan;
+ font-size: 14px;
+ }
+ 
