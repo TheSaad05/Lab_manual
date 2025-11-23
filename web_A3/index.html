@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Whiz Wizardry</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="text-center max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-indigo-600 mb-4">Quiz Whiz Wizardry</h1>
+        <p class="text-gray-600 mb-6">Test your knowledge with these 5 fun questions!</p>
+        <button id="start-btn" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="hidden max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+        <div class="flex justify-between items-center mb-6">
+            <span id="question-count" class="text-indigo-600 font-medium">Question 1/5</span>
+            <span id="score" class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full">Score: 0</span>
+        </div>
+        <h2 id="question" class="text-xl font-semibold mb-6">Question goes here</h2>
+        <div id="options" class="space-y-3 mb-6">
+            <!-- Options will be added by JavaScript -->
+        </div>
+        <div id="feedback" class="hidden mb-4 p-3 rounded"></div>
+        <button id="next-btn" class="hidden bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">Next</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="hidden max-w-md w-full bg-white p-8 rounded-lg shadow-lg text-center">
+        <h2 class="text-2xl font-bold text-indigo-600 mb-4">Quiz Completed!</h2>
+        <p id="final-score" class="text-xl mb-4">You scored 3 out of 5</p>
+        <p id="result-message" class="text-gray-600 mb-6">Great job!</p>
+        <button id="restart-btn" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">Restart Quiz</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
